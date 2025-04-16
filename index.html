@@ -14,26 +14,62 @@
     }
 
     header {
-      background-color: #d62828;
+      position: relative;
+      padding: 4rem 1rem;
       color: #fff;
-      padding: 1rem;
+      overflow: hidden; /* Ensure the pseudo-element does not spill over */
+    }
+
+    /* Pseudo-element for blurred background image */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('headerBackground.jpg'); /* Local image path */
+      background-size: cover;
+      background-position: center;
+      filter: blur(1px);
+      transform: scale(1.05); /* Slight scale to cover edges */
+      z-index: -1;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 2rem;
+      border-radius: 10px;
+      display: inline-block;
     }
 
     header h1 {
       margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    header h2 {
+      margin-top: 1.5rem;
+      font-size: 2rem;
+      letter-spacing: 2px;
     }
 
     .menu-images {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 1rem;
+      padding: 1rem 1rem 0.5rem;
     }
 
     .menu-images img {
       max-width: 95%;
       height: auto;
-      margin: 1rem 0;
+      margin: 0.5rem 0;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
@@ -62,8 +98,11 @@
 </head>
 <body>
   <header>
-    <h1>Crave Xpress</h1>
-    <p>Quick Bite, Big Delight</p>
+    <div class="overlay">
+      <h1>Crave Xpress</h1>
+      <p>Quick Bite, Big Delight</p>
+      <h2>MENU</h2>
+    </div>
   </header>
 
   <section class="menu-images">
@@ -82,6 +121,9 @@
       </a>
       <a href="https://www.instagram.com/crave_xpress?igsh=eGgybmxoNTZ0djZl&utm_source=qr" target="_blank">
         <img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram" />
+      </a>
+      <a href="mailto:yourname@gmail.com" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/000000/gmail.png" alt="Gmail" />
       </a>
     </div>
   </footer>
