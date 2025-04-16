@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #fff;
+      background-color: red;
       color: #333;
       text-align: center;
     }
@@ -17,10 +17,9 @@
       position: relative;
       padding: 4rem 1rem;
       color: #fff;
-      overflow: hidden; /* Ensure the pseudo-element does not spill over */
+      overflow: hidden;
     }
 
-    /* Pseudo-element for blurred background image */
     header::before {
       content: "";
       position: absolute;
@@ -28,11 +27,11 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url('headerBackground.jpg'); /* Local image path */
+      background-image: url('headerBackground.jpg');
       background-size: cover;
       background-position: center;
       filter: blur(1px);
-      transform: scale(1.05); /* Slight scale to cover edges */
+      transform: scale(1.05);
       z-index: -1;
     }
 
@@ -57,6 +56,33 @@
       margin-top: 1.5rem;
       font-size: 2rem;
       letter-spacing: 2px;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem 1.5rem;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #fff;
+      background: linear-gradient(135deg, #ff7e79, #ff4e50);
+      border-left: 5px solid #d62828;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .menu-images {
@@ -105,10 +131,17 @@
     </div>
   </header>
 
+  <section class="intro">
+    <p>
+      Discover the delicious flavors of <strong>CRAVE XPRESS</strong> — fresh, high-quality food that brings joy to every meal. Taste the difference in every bite and experience the satisfaction of dining with us. Try <strong>CRAVE XPRESS</strong> today and elevate your culinary experience.
+    </p>
+  </section>
+
   <section class="menu-images">
     <img src="images/e5477d13-63cc-4d1a-b968-d4f4e82d0d3e.jpg" alt="Rice and Chicken Menu" />
     <img src="images/87071fba-cb12-4071-881b-550ca1521913.jpg" alt="Spaghetti, Noodles, and Extras Menu" />
     <img src="images/8c6d4062-7967-4026-b5b1-69ba2d74ab1f.jpg" alt="Spaghetti, Noodles, and Extras Menu" />
+    <img src="images/17a3d938-8c09-45f6-b7f6-c0f6bb059d0c.jpg" alt="Special Combo Menu" />
   </section>
 
   <footer>
